@@ -1,5 +1,9 @@
 'use strict';
 
+//system variables needed
+let playerScore = 0;
+let playGame = '';
+
 // get user name store to variable
 let userName = prompt('What is your name?');
 let lowerCaseName = userName.toLowerCase();
@@ -23,6 +27,7 @@ if (answerOne === 'yes' || answerOne === 'y') {
 } else if (answerOne === 'no' || answerOne === 'n') {
   //console.log('Correct. I do not live in Seattle');
   alert('Correct. I do not live in Seattle');
+  playerScore++;
 } else {
   //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
   alert('Sorry, you did not answer with a yes/no or y/n. Next question now!');
@@ -38,6 +43,7 @@ if (answerTwo === 'yes' || answerTwo === 'y') {
 } else if (answerTwo === 'no' || answerTwo === 'n') {
   //console.log('You are correct. I live in the Cayman Islands');
   alert('You are correct. I live in the Cayman Islands');
+  playerScore++;
 } else {
   //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
   alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
@@ -50,6 +56,7 @@ let answerThree = prompt('Do I enjoy coding with JavaScript (Yes/No or Y/N)?').t
 if (answerThree === 'yes' || answerThree === 'y') {
   //console.log('You are correct, I do enjoy coding with JavaScript. I like coding with many different languages');
   alert('You are correct, I do enjoy coding with JavaScript. I like coding with many different languages');
+  playerScore++;
 } else if (answerThree === 'no' || answerThree === 'n') {
   //console.log('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
   alert('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
@@ -65,6 +72,7 @@ let answerFour = prompt('Do I currently work for the Port Authority (Yes/No or Y
 if (answerFour === 'yes' || answerFour === 'y') {
   //console.log('You are correct, I have been working with the Port Authority for 25 years');
   alert('You are correct, I have been working with the Port Authority for 26 years');
+  playerScore++;
 } else if (answerFour === 'no' || answerFour === 'n') {
   //console.log('You are incorrect. My entire career has been with the Port Authority for 26 years already');
   alert('You are incorrect. My entire career has been with the Port Authority for 26 years already');
@@ -73,13 +81,14 @@ if (answerFour === 'yes' || answerFour === 'y') {
   alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
 }
 
-// prompt for question 4 and store to variable converted to lower case
+// prompt for question 5 and store to variable converted to lower case
 let answerFive = prompt('Am I wanting to return to coding (Yes/No or Y/N)?').toLowerCase();
 
 // checks for the answer to answer One
 if (answerFive === 'yes' || answerFive === 'y') {
   //console.log('You are correct, I enjoy coding so much that I want to return to doing it full-time');
   alert('You are correct, I enjoy coding so much that I want to return to doing it full-time');
+  playerScore++;
 } else if (answerFive === 'no' || answerFive === 'n') {
   //console.log('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
   alert('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
@@ -88,4 +97,37 @@ if (answerFive === 'yes' || answerFive === 'y') {
   alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
 }
 
+// Question 6
 alert('Thanks for taking my quiz. Hope you learned a little about me ' + userName);
+
+playGame = prompt(`${userName}, do you want to play a number guessing game Yes/No or Y/N?`).toLowerCase();
+
+if (playGame === 'yes' || playGame === 'y') {
+  let myNumber = 3;
+  let attempts = 4;
+  let playerGuess = 0;
+  alert('Great lets Play my amazing number guesing game!!');
+  for (let i = 1; i <= attempts; i++) {
+    //console.log(`attempts: ${i}`);
+    playerGuess = prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
+    if (playerGuess < myNumber) {
+      alert('Your guess is too low');
+    } else if (playerGuess > myNumber) {
+      alert('Your guess is too high');
+    } else {
+      alert('You guessed the number correct');
+      playerScore++;
+      break;
+    }
+    // Checking if player already tried 4 times if so, end game with message attempts used and provide your number.
+    if (attempts === i) {
+      alert(`Too many guesses as you only had ${attempts} attempts avaliable. My number was ${myNumber}! Good luck next time.`);
+      //alert('Too many guesses as you only had ' + attempts + ' attempts avaliable. My number was ' + myNumber +'!')
+    }
+  }
+} else {
+  alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
+}
+
+alert(`${userName} your final score for all questions is: ${playerScore}`);
+

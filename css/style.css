@@ -6,6 +6,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  margin-bottom: 115px;
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -30,7 +34,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -41,6 +45,7 @@ h3 {
   background-color: white;
   border-radius: 10px;
   max-width: 91%;
+  text-align: center;
 }
 
 section h3~ul,
@@ -75,7 +80,9 @@ p {
 
 footer {
   background-color: #a0d2e9;
-  width: auto;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 footer ul {
@@ -103,3 +110,4 @@ footer ul li a:active {
   color: #ff1b68;
   border: none;
 }
+
