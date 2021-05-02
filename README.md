@@ -15,6 +15,7 @@
 - User Story 3 - Question 7 added to use an array of possible answers and takes the guess from the user loops over the array to check if valid answer. Converts all answers to lower case as the array is lower case.
 - User has 6 attempts to guess a valid answer in the array. If the user does not enter an answer, they forfit a turn. Once 1 guess is correct from the array of possible answers, it exits the loops using a label and informs the user they guessed correct. It also shows all the possible answers from the array.
 - User Story 4 - Added the score option to all questions and displays the score on most alerts as the game goes on.
+- Adjusted the CSS change colors, fixe footer to fixed position, centered boxes.
 
 ### Author: Willem Jacobs
 
