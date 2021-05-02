@@ -103,7 +103,8 @@ alert('Thanks for taking my quiz. Hope you learned a little about me ' + userNam
 playGame = prompt(`${userName}, do you want to play a number guessing game Yes/No or Y/N?`).toLowerCase();
 
 if (playGame === 'yes' || playGame === 'y') {
-  let myNumber = 3;
+  let myNumber = Math.floor(Math.random() * (10 - 1) + 1);
+  console.log(myNumber);
   let attempts = 4;
   let playerGuess = 0;
   alert('Great lets Play my amazing number guesing game!!');
