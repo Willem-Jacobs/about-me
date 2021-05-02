@@ -139,11 +139,12 @@ if (playGame === 'yes' || playGame === 'y') {
   let myAnswers = ['holland', 'curacao', 'finland', 'honduras', 'panama', 'costa rica', 'columbia', 'great britain', 'cuba', 'canada'];
   let attempts = 6;
   let playerGuess = '';
+  let found = false;
   alert('Great lets play the question/asnwer guesing game!!');
   outsideLoop:
   for (let i = 1; i <= attempts; i++) {
     playerGuess = prompt(`Attempt #:${i} out of ${attempts}. What is one of the contries I have visited?`).toLowerCase();
-    console.log(`Player guessed: ${playerGuess}`);
+    //console.log(`Player guessed: ${playerGuess}`);
     if (!playerGuess) {
       alert(`${userName}, you did not enter an asnwer and have lost a turn! You have ${attempts - i} left. Try again`);
       continue;
@@ -152,11 +153,16 @@ if (playGame === 'yes' || playGame === 'y') {
       if (playerGuess === myAnswers[j]) {
         playerScore++;
         alert(`You are correct, I have visited ${playerGuess}. Score: ${playerScore}`);
+        found = true;
         break outsideLoop;
       }
     }
     if (attempts === i) {
       alert(`Game Over as you had ${i} attempts out of ${attempts}.\nI have visted:\n${myAnswers}.`);
+    }
+    if (!found) {
+      alert(`Your entry ${playerGuess} is not a country I have visited`);
+      found = false;
     }
   }
   alert(`I have visited the following countries:\n${myAnswers}.`);
