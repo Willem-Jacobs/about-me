@@ -103,14 +103,16 @@ alert('Thanks for taking my quiz. Hope you learned a little about me ' + userNam
 playGame = prompt(`${userName}, do you want to play a number guessing game Yes/No or Y/N?`).toLowerCase();
 
 if (playGame === 'yes' || playGame === 'y') {
+  // console.log(`Play Game: ${playGame}`);
   let myNumber = Math.floor(Math.random() * (10 - 1) + 1);
-  console.log(myNumber);
+  // console.log(myNumber);
   let attempts = 4;
   let playerGuess = 0;
   alert('Great lets Play my amazing number guesing game!!');
   for (let i = 1; i <= attempts; i++) {
     //console.log(`attempts: ${i}`);
     playerGuess = prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
+    //console.log(`Number guessed by player: ${playerGuess}`);
     if (playerGuess < myNumber) {
       alert('Your guess is too low');
     } else if (playerGuess > myNumber) {
@@ -133,6 +135,7 @@ if (playGame === 'yes' || playGame === 'y') {
 playGame = prompt(`${userName}, Want to play my Question Guessing Game - Yes/No or Y/N?`).toLowerCase();
 
 if (playGame === 'yes' || playGame === 'y') {
+  // console.log(`Play Game: ${playGame}`);
   let myAnswers = ['holland', 'curacao', 'finland', 'honduras', 'panama', 'costa rica', 'columbia', 'great britain', 'cuba', 'canada'];
   let attempts = 6;
   let playerGuess = '';
@@ -140,6 +143,7 @@ if (playGame === 'yes' || playGame === 'y') {
   outsideLoop:
   for (let i = 1; i <= attempts; i++) {
     playerGuess = prompt(`Attempt #:${i} out of ${attempts}. What is one of the contries I have visited?`).toLowerCase();
+    console.log(`Player guessed: ${playerGuess}`);
     if (!playerGuess) {
       alert(`${userName}, you did not enter an asnwer and have lost a turn! You have ${attempts - i} left. Try again`);
       continue;
