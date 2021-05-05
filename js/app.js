@@ -3,6 +3,11 @@
 //system variables needed
 let playerScore = 0;
 let playGame = '';
+let questions = ['Do I live in Seattle area (Yes/Y or No/N?', 'Do I live in the United States (Yes/No or Y/N', 'Do I enjoy coding with JavaScript (Yes/No or Y/N)?', 'Do I currently work for the Port Authority (Yes/No or Y/N)?', 'Am I wanting to return to coding (Yes/No or Y/N)?'];
+let correctAnswers = ['Correct. I do not live in the Seattle area. Score: ', 'You are correct. I live in the Cayman Islands. Score: ', 'You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ', 'You are correct, I have been working with the Port Authority for 26 years. Score: ', 'You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: '];
+let wrongAnswers = ['Sorry, I do not live in the Seattle area. Score: ', 'You are NOT correct!, I live in the Cayman Islands. Score: ', 'You are incorrect. I enjoy coding in JavaScript and other languages as well! Score: ', 'You are incorrect. My entire career has been with the Port Authority for 26 years already. Score: ', 'You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion. Score: '];
+const responseValues = ['yes', 'y', 'no', 'n'];
+let defaultWrong = 'Sorry, you did not answer with a yes/no or y/n. Next question now! Score: ';
 
 // get user name store to variable
 let userName = prompt('What is your name?');
@@ -19,98 +24,84 @@ if (lowerCaseName === 'will' || lowerCaseName === 'willem') {
 
 // prompt for question 1 and store to variable converted to lower case
 function q1(){
-  let answerOne = prompt('Do I live in Seattle (Yes/No or Y/N)?').toLowerCase();
-
-  // checks for the answer to answer One
-  if (answerOne === 'yes' || answerOne === 'y') {
-    //console.log('Sorry, I do not live in Seattle');
-    alert('Sorry, I do not live in Seattle');
-  } else if (answerOne === 'no' || answerOne === 'n') {
-    //console.log('Correct. I do not live in Seattle');
+  let answerOne = prompt(questions[0]).toLowerCase();
+  if (answerOne === responseValues[2] || answerOne === responseValues[3]) {
+    // if answer is no (correct)
     playerScore++;
-    alert(`Correct. I do not live in Seattle. Score: ${playerScore}`);
+    alert(correctAnswers[0] + playerScore);
+  } else if (answerOne === responseValues[0] || answerOne === responseValues[1]) {
+    // if answer is yes (wrong)
+    alert(wrongAnswers[0] + playerScore);
   } else {
-    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-    alert('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    // other value entered
+    alert(defaultWrong + playerScore);
   }
 }
 q1();
 
 // prompt for question 2 and store to variable converted to lower case
 function q2(){
-  let answerTwo = prompt('Do I live in the United States (Yes/No or Y/N)?').toLowerCase();
-
-  // checks for the answer to answer One
-  if (answerTwo === 'yes' || answerTwo === 'y') {
-    //console.log('You are not correct! I do live in the Cayman Islands');
-    alert('You are NOT correct! I live in the Cayman Islands');
-  } else if (answerTwo === 'no' || answerTwo === 'n') {
-    //console.log('You are correct. I live in the Cayman Islands');
+  let answerTwo = prompt(questions[1]).toLowerCase();
+  if (answerTwo === responseValues[2] || answerTwo === responseValues[3]) {
+    // if answer is no (correct)
     playerScore++;
-    alert(`You are correct. I live in the Cayman Islands. Score: ${playerScore}`);
+    alert(correctAnswers[1] + playerScore);
+  } else if (answerTwo === responseValues[0] || answerTwo === responseValues[1]) {
+    // if answer is yes (wrong)
+    alert(wrongAnswers[1] + playerScore);
   } else {
-    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+    alert(defaultWrong + playerScore);
   }
 }
 q2();
 
 // prompt for question 3 and store to variable converted to lower case
 function q3(){
-  let answerThree = prompt('Do I enjoy coding with JavaScript (Yes/No or Y/N)?').toLowerCase();
-
-  // checks for the answer to answer One
-  if (answerThree === 'yes' || answerThree === 'y') {
-    //console.log('You are correct, I do enjoy coding with JavaScript. I like coding with many different languages');
+  let answerTwo = prompt(questions[2]).toLowerCase();
+  if (answerTwo === responseValues[0] || answerTwo === responseValues[1]) {
+    // if answer is yes/y (correct)
     playerScore++;
-    alert(`You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ${playerScore}`);
-  } else if (answerThree === 'no' || answerThree === 'n') {
-    //console.log('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
-    alert('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
+    alert(correctAnswers[2] + playerScore);
+  } else if (answerTwo === responseValues[2] || answerTwo === responseValues[3]) {
+    // if answer is no/n (wrong)
+    alert(wrongAnswers[2] + playerScore);
   } else {
-    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+    alert(defaultWrong + playerScore);
   }
 }
-q3();  
+q3();
 
 // prompt for question 4 and store to variable converted to lower case
 function q4(){
-  let answerFour = prompt('Do I currently work for the Port Authority (Yes/No or Y/N)?').toLowerCase();
-
-  // checks for the answer to answer One
-  if (answerFour === 'yes' || answerFour === 'y') {
-    //console.log('You are correct, I have been working with the Port Authority for 25 years');
+  let answerFour = prompt(questions[3]).toLowerCase();
+  if (answerFour === responseValues[0] || answerFour === responseValues[1]) {
+    // if answer is yes/y (correct)
     playerScore++;
-    alert(`You are correct, I have been working with the Port Authority for 26 years. Score: ${playerScore}`);
-  } else if (answerFour === 'no' || answerFour === 'n') {
-    //console.log('You are incorrect. My entire career has been with the Port Authority for 26 years already');
-    alert('You are incorrect. My entire career has been with the Port Authority for 26 years already');
+    alert(correctAnswers[3] + playerScore);
+  } else if (answerFour === responseValues[2] || answerFour === responseValues[3]) {
+    // if answer is no/n (wrong)
+    alert(wrongAnswers[3] + playerScore);
   } else {
-    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+    alert(defaultWrong + playerScore);
   }
 }
-q4();  
+q4();
 
 // prompt for question 5 and store to variable converted to lower case
 function q5(){
-  let answerFive = prompt('Am I wanting to return to coding (Yes/No or Y/N)?').toLowerCase();
-
-  // checks for the answer to answer One
-  if (answerFive === 'yes' || answerFive === 'y') {
-    //console.log('You are correct, I enjoy coding so much that I want to return to doing it full-time');
+  let answerFive = prompt(questions[4]).toLowerCase();
+  if (answerFive === responseValues[0] || answerFive === responseValues[1]) {
+    // if answer is yes/y (correct)
     playerScore++;
-    alert(`You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: ${playerScore}`);
-  } else if (answerFive === 'no' || answerFive === 'n') {
-    //console.log('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
-    alert('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
+    alert(correctAnswers[4] + playerScore);
+  } else if (answerFive === responseValues[2] || answerFive === responseValues[3]) {
+    // if answer is no/n (wrong)
+    alert(wrongAnswers[4] + playerScore);
   } else {
-    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+    alert(defaultWrong + playerScore);
   }
 }
-q5();  
+q5();
 
 alert('Thanks for taking my quiz. Hope you learned a little about me ' + userName);
 
@@ -146,7 +137,7 @@ function q6(){
   } else {
     alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
   }
-}  
+}
 q6();
 
 // Question 7
