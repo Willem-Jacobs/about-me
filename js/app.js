@@ -75,20 +75,23 @@ function q3(){
 q3();  
 
 // prompt for question 4 and store to variable converted to lower case
-let answerFour = prompt('Do I currently work for the Port Authority (Yes/No or Y/N)?').toLowerCase();
+function q4(){
+  let answerFour = prompt('Do I currently work for the Port Authority (Yes/No or Y/N)?').toLowerCase();
 
-// checks for the answer to answer One
-if (answerFour === 'yes' || answerFour === 'y') {
-  //console.log('You are correct, I have been working with the Port Authority for 25 years');
-  playerScore++;
-  alert(`You are correct, I have been working with the Port Authority for 26 years. Score: ${playerScore}`);
-} else if (answerFour === 'no' || answerFour === 'n') {
-  //console.log('You are incorrect. My entire career has been with the Port Authority for 26 years already');
-  alert('You are incorrect. My entire career has been with the Port Authority for 26 years already');
-} else {
-  //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-  alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  // checks for the answer to answer One
+  if (answerFour === 'yes' || answerFour === 'y') {
+    //console.log('You are correct, I have been working with the Port Authority for 25 years');
+    playerScore++;
+    alert(`You are correct, I have been working with the Port Authority for 26 years. Score: ${playerScore}`);
+  } else if (answerFour === 'no' || answerFour === 'n') {
+    //console.log('You are incorrect. My entire career has been with the Port Authority for 26 years already');
+    alert('You are incorrect. My entire career has been with the Port Authority for 26 years already');
+  } else {
+    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  }
 }
+q4();  
 
 // prompt for question 5 and store to variable converted to lower case
 let answerFive = prompt('Am I wanting to return to coding (Yes/No or Y/N)?').toLowerCase();
