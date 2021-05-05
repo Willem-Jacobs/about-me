@@ -115,36 +115,39 @@ q5();
 alert('Thanks for taking my quiz. Hope you learned a little about me ' + userName);
 
 // Question 6
-playGame = prompt(`${userName}, do you want to play a number guessing game Yes/No or Y/N?`).toLowerCase();
+function q6(){
+  playGame = prompt(`${userName}, do you want to play a number guessing game Yes/No or Y/N?`).toLowerCase();
 
-if (playGame === 'yes' || playGame === 'y') {
-  // console.log(`Play Game: ${playGame}`);
-  let myNumber = Math.floor(Math.random() * (10 - 1) + 1);
-  // console.log(myNumber);
-  let attempts = 4;
-  let playerGuess = 0;
-  alert('Great lets Play my amazing number guesing game!!');
-  for (let i = 1; i <= attempts; i++) {
-    //console.log(`attempts: ${i}`);
-    playerGuess = +prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
-    //console.log(`Number guessed by player: ${playerGuess}`);
-    if (playerGuess < myNumber) {
-      alert('Your guess is too low');
-    } else if (playerGuess > myNumber) {
-      alert('Your guess is too high');
-    } else {
-      alert(`You guessed the number correct ${1} attempts. Well done!`);
-      playerScore++;
-      break;
+  if (playGame === 'yes' || playGame === 'y') {
+    // console.log(`Play Game: ${playGame}`);
+    let myNumber = Math.floor(Math.random() * (10 - 1) + 1);
+    // console.log(myNumber);
+    let attempts = 4;
+    let playerGuess = 0;
+    alert('Great lets Play my amazing number guesing game!!');
+    for (let i = 1; i <= attempts; i++) {
+      //console.log(`attempts: ${i}`);
+      playerGuess = +prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
+      //console.log(`Number guessed by player: ${playerGuess}`);
+      if (playerGuess < myNumber) {
+        alert('Your guess is too low');
+      } else if (playerGuess > myNumber) {
+        alert('Your guess is too high');
+      } else {
+        alert(`You guessed the number correct ${1} attempts. Well done!`);
+        playerScore++;
+        break;
+      }
+      // Checking if player already tried 4 times if so, end game with message attempts used and provide your number.
+      if (attempts === i) {
+        alert(`Too many guesses as you only had ${attempts} attempts avaliable. My number was ${myNumber}! Good luck next time. Score: ${playerScore}`);
+      }
     }
-    // Checking if player already tried 4 times if so, end game with message attempts used and provide your number.
-    if (attempts === i) {
-      alert(`Too many guesses as you only had ${attempts} attempts avaliable. My number was ${myNumber}! Good luck next time. Score: ${playerScore}`);
-    }
+  } else {
+    alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
   }
-} else {
-  alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
-}
+}  
+q6();
 
 // Question 7
 playGame = prompt(`${userName}, Want to play my Question Guessing Game - Yes/No or Y/N?`).toLowerCase();
