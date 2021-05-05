@@ -37,20 +37,23 @@ function q1(){
 q1();
 
 // prompt for question 2 and store to variable converted to lower case
-let answerTwo = prompt('Do I live in the United States (Yes/No or Y/N)?').toLowerCase();
+function q2(){
+  let answerTwo = prompt('Do I live in the United States (Yes/No or Y/N)?').toLowerCase();
 
-// checks for the answer to answer One
-if (answerTwo === 'yes' || answerTwo === 'y') {
-  //console.log('You are not correct! I do live in the Cayman Islands');
-  alert('You are NOT correct! I live in the Cayman Islands');
-} else if (answerTwo === 'no' || answerTwo === 'n') {
-  //console.log('You are correct. I live in the Cayman Islands');
-  playerScore++;
-  alert(`You are correct. I live in the Cayman Islands. Score: ${playerScore}`);
-} else {
-  //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-  alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  // checks for the answer to answer One
+  if (answerTwo === 'yes' || answerTwo === 'y') {
+    //console.log('You are not correct! I do live in the Cayman Islands');
+    alert('You are NOT correct! I live in the Cayman Islands');
+  } else if (answerTwo === 'no' || answerTwo === 'n') {
+    //console.log('You are correct. I live in the Cayman Islands');
+    playerScore++;
+    alert(`You are correct. I live in the Cayman Islands. Score: ${playerScore}`);
+  } else {
+    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  }
 }
+q2();
 
 // prompt for question 3 and store to variable converted to lower case
 let answerThree = prompt('Do I enjoy coding with JavaScript (Yes/No or Y/N)?').toLowerCase();
