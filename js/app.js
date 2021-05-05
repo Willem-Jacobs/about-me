@@ -56,20 +56,23 @@ function q2(){
 q2();
 
 // prompt for question 3 and store to variable converted to lower case
-let answerThree = prompt('Do I enjoy coding with JavaScript (Yes/No or Y/N)?').toLowerCase();
+function q3(){
+  let answerThree = prompt('Do I enjoy coding with JavaScript (Yes/No or Y/N)?').toLowerCase();
 
-// checks for the answer to answer One
-if (answerThree === 'yes' || answerThree === 'y') {
-  //console.log('You are correct, I do enjoy coding with JavaScript. I like coding with many different languages');
-  playerScore++;
-  alert(`You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ${playerScore}`);
-} else if (answerThree === 'no' || answerThree === 'n') {
-  //console.log('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
-  alert('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
-} else {
-  //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-  alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  // checks for the answer to answer One
+  if (answerThree === 'yes' || answerThree === 'y') {
+    //console.log('You are correct, I do enjoy coding with JavaScript. I like coding with many different languages');
+    playerScore++;
+    alert(`You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ${playerScore}`);
+  } else if (answerThree === 'no' || answerThree === 'n') {
+    //console.log('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
+    alert('You are incorrect. I enjoy coding in JavaScript and other languages as well!');
+  } else {
+    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  }
 }
+q3();  
 
 // prompt for question 4 and store to variable converted to lower case
 let answerFour = prompt('Do I currently work for the Port Authority (Yes/No or Y/N)?').toLowerCase();
