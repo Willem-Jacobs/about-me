@@ -3,11 +3,10 @@
 //system variables needed
 let playerScore = 0;
 let playGame = '';
-let questions = ['Do I live in Seattle area (Yes/Y or No/N?', 'Do I live in the United States (Yes/No or Y/N', 'Do I enjoy coding with JavaScript (Yes/No or Y/N)?', 'Do I currently work for the Port Authority (Yes/No or Y/N)?', 'Am I wanting to return to coding (Yes/No or Y/N)?'];
-let correctAnswers = ['Correct. I do not live in the Seattle area. Score: ', 'You are correct. I live in the Cayman Islands. Score: ', 'You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ', 'You are correct, I have been working with the Port Authority for 26 years. Score: ', 'You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: '];
-let wrongAnswers = ['Sorry, I do not live in the Seattle area. Score: ', 'You are NOT correct!, I live in the Cayman Islands. Score: ', 'You are incorrect. I enjoy coding in JavaScript and other languages as well! Score: ', 'You are incorrect. My entire career has been with the Port Authority for 26 years already. Score: ', 'You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion. Score: '];
-const responseValues = ['yes', 'y', 'no', 'n'];
-let defaultWrong = 'Sorry, you did not answer with a yes/no or y/n. Next question now! Score: ';
+const questions = ['Do I live in Seattle area (Yes/Y or No/N?', 'Do I live in the United States (Yes/No or Y/N', 'Do I enjoy coding with JavaScript (Yes/No or Y/N)?', 'Do I currently work for the Port Authority (Yes/No or Y/N)?', 'Am I wanting to return to coding (Yes/No or Y/N)?'];
+const correctMessages = ['Correct. I do not live in the Seattle area. Score: ', 'You are correct. I live in the Cayman Islands. Score: ', 'You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ', 'You are correct, I have been working with the Port Authority for 26 years. Score: ', 'You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: '];
+const wrongMessages = ['Sorry, I do not live in the Seattle area. Score: ', 'You are NOT correct!, I live in the Cayman Islands. Score: ', 'You are incorrect. I enjoy coding in JavaScript and other languages as well! Score: ', 'You are incorrect. My entire career has been with the Port Authority for 26 years already. Score: ', 'You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion. Score: '];
+const correctAnswers = ['no', 'no', 'yes', 'yes', 'yes'];
 
 // get user name store to variable
 let userName = prompt('What is your name?');
@@ -22,86 +21,25 @@ if (lowerCaseName === 'will' || lowerCaseName === 'willem') {
   alert('Welcome ' + userName + '!');
 }
 
-// prompt for question 1 and store to variable converted to lower case
-function q1(){
-  let answerOne = prompt(questions[0]).toLowerCase();
-  if (answerOne === responseValues[2] || answerOne === responseValues[3]) {
-    // if answer is no (correct)
-    playerScore++;
-    alert(correctAnswers[0] + playerScore);
-  } else if (answerOne === responseValues[0] || answerOne === responseValues[1]) {
-    // if answer is yes (wrong)
-    alert(wrongAnswers[0] + playerScore);
-  } else {
-    // other value entered
-    alert(defaultWrong + playerScore);
+function askQuestions() {
+  for (let i = 0; i < questions.length; i++) {
+    let answer = prompt(questions[i]).toLowerCase();
+    if (correctAnswers[i] === 'no' && (answer === 'no' || answer === 'n')) {
+      playerScore++;
+      alert(correctMessages[i] + playerScore);
+      continue;
+    }
+    if (correctAnswers[i] === 'yes' && (answer === 'yes' || answer === 'y')) {
+      playerScore++;
+      alert(correctMessages[i] + playerScore);
+      continue;
+    }
+    if (answer !== correctAnswers[i]) {
+      alert(wrongMessages[i] + playerScore);
+    }
   }
 }
-q1();
-
-// prompt for question 2 and store to variable converted to lower case
-function q2(){
-  let answerTwo = prompt(questions[1]).toLowerCase();
-  if (answerTwo === responseValues[2] || answerTwo === responseValues[3]) {
-    // if answer is no (correct)
-    playerScore++;
-    alert(correctAnswers[1] + playerScore);
-  } else if (answerTwo === responseValues[0] || answerTwo === responseValues[1]) {
-    // if answer is yes (wrong)
-    alert(wrongAnswers[1] + playerScore);
-  } else {
-    alert(defaultWrong + playerScore);
-  }
-}
-q2();
-
-// prompt for question 3 and store to variable converted to lower case
-function q3(){
-  let answerTwo = prompt(questions[2]).toLowerCase();
-  if (answerTwo === responseValues[0] || answerTwo === responseValues[1]) {
-    // if answer is yes/y (correct)
-    playerScore++;
-    alert(correctAnswers[2] + playerScore);
-  } else if (answerTwo === responseValues[2] || answerTwo === responseValues[3]) {
-    // if answer is no/n (wrong)
-    alert(wrongAnswers[2] + playerScore);
-  } else {
-    alert(defaultWrong + playerScore);
-  }
-}
-q3();
-
-// prompt for question 4 and store to variable converted to lower case
-function q4(){
-  let answerFour = prompt(questions[3]).toLowerCase();
-  if (answerFour === responseValues[0] || answerFour === responseValues[1]) {
-    // if answer is yes/y (correct)
-    playerScore++;
-    alert(correctAnswers[3] + playerScore);
-  } else if (answerFour === responseValues[2] || answerFour === responseValues[3]) {
-    // if answer is no/n (wrong)
-    alert(wrongAnswers[3] + playerScore);
-  } else {
-    alert(defaultWrong + playerScore);
-  }
-}
-q4();
-
-// prompt for question 5 and store to variable converted to lower case
-function q5(){
-  let answerFive = prompt(questions[4]).toLowerCase();
-  if (answerFive === responseValues[0] || answerFive === responseValues[1]) {
-    // if answer is yes/y (correct)
-    playerScore++;
-    alert(correctAnswers[4] + playerScore);
-  } else if (answerFive === responseValues[2] || answerFive === responseValues[3]) {
-    // if answer is no/n (wrong)
-    alert(wrongAnswers[4] + playerScore);
-  } else {
-    alert(defaultWrong + playerScore);
-  }
-}
-q5();
+askQuestions();
 
 alert('Thanks for taking my quiz. Hope you learned a little about me ' + userName);
 
