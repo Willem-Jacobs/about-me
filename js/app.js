@@ -150,42 +150,45 @@ function q6(){
 q6();
 
 // Question 7
-playGame = prompt(`${userName}, Want to play my Question Guessing Game - Yes/No or Y/N?`).toLowerCase();
+function q7(){
+  playGame = prompt(`${userName}, Want to play my Question Guessing Game - Yes/No or Y/N?`).toLowerCase();
 
-if (playGame === 'yes' || playGame === 'y') {
-  // console.log(`Play Game: ${playGame}`);
-  let myAnswers = ['holland', 'curacao', 'finland', 'honduras', 'panama', 'costa rica', 'columbia', 'great britain', 'cuba', 'canada'];
-  let attempts = 6;
-  let playerGuess = '';
-  let found = false;
-  alert('Great lets play the question/asnwer guesing game!!');
-  outsideLoop:
-  for (let i = 1; i <= attempts; i++) {
-    playerGuess = prompt(`Attempt #:${i} out of ${attempts}. What is one of the contries I have visited?`).toLowerCase();
-    //console.log(`Player guessed: ${playerGuess}`);
-    if (!playerGuess) {
-      alert(`${userName}, you did not enter an asnwer and have lost a turn! You have ${attempts - i} left. Try again`);
-      continue;
-    }
-    for (let j = 0; j < myAnswers.length; j++) {
-      if (playerGuess === myAnswers[j]) {
-        playerScore++;
-        alert(`You are correct, I have visited ${playerGuess}. Score: ${playerScore}`);
-        found = true;
-        break outsideLoop;
+  if (playGame === 'yes' || playGame === 'y') {
+    // console.log(`Play Game: ${playGame}`);
+    let myAnswers = ['holland', 'curacao', 'finland', 'honduras', 'panama', 'costa rica', 'columbia', 'great britain', 'cuba', 'canada'];
+    let attempts = 6;
+    let playerGuess = '';
+    let found = false;
+    alert('Great lets play the question/asnwer guesing game!!');
+    outsideLoop:
+    for (let i = 1; i <= attempts; i++) {
+      playerGuess = prompt(`Attempt #:${i} out of ${attempts}. What is one of the contries I have visited?`).toLowerCase();
+      //console.log(`Player guessed: ${playerGuess}`);
+      if (!playerGuess) {
+        alert(`${userName}, you did not enter an asnwer and have lost a turn! You have ${attempts - i} left. Try again`);
+        continue;
+      }
+      for (let j = 0; j < myAnswers.length; j++) {
+        if (playerGuess === myAnswers[j]) {
+          playerScore++;
+          alert(`You are correct, I have visited ${playerGuess}. Score: ${playerScore}`);
+          found = true;
+          break outsideLoop;
+        }
+      }
+      if (attempts === i) {
+        alert(`Game Over as you had ${i} attempts out of ${attempts}.\nI have visted:\n${myAnswers}.`);
+      }
+      if (!found) {
+        alert(`Your entry ${playerGuess} is not a country I have visited`);
+        found = false;
       }
     }
-    if (attempts === i) {
-      alert(`Game Over as you had ${i} attempts out of ${attempts}.\nI have visted:\n${myAnswers}.`);
-    }
-    if (!found) {
-      alert(`Your entry ${playerGuess} is not a country I have visited`);
-      found = false;
-    }
+    alert(`I have visited the following countries:\n${myAnswers}.`);
+  } else {
+    alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
   }
-  alert(`I have visited the following countries:\n${myAnswers}.`);
-} else {
-  alert(`${userName} too bad you do not want to play my game. Maybe next time.`);
 }
+q7();
 
 alert(`${userName}, your final score for all questions is: ${playerScore}`);
