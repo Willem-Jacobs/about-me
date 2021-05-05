@@ -18,20 +18,23 @@ if (lowerCaseName === 'will' || lowerCaseName === 'willem') {
 }
 
 // prompt for question 1 and store to variable converted to lower case
-let answerOne = prompt('Do I live in Seattle (Yes/No or Y/N)?').toLowerCase();
+function q1(){
+  let answerOne = prompt('Do I live in Seattle (Yes/No or Y/N)?').toLowerCase();
 
-// checks for the answer to answer One
-if (answerOne === 'yes' || answerOne === 'y') {
-  //console.log('Sorry, I do not live in Seattle');
-  alert('Sorry, I do not live in Seattle');
-} else if (answerOne === 'no' || answerOne === 'n') {
-  //console.log('Correct. I do not live in Seattle');
-  playerScore++;
-  alert(`Correct. I do not live in Seattle. Score: ${playerScore}`);
-} else {
-  //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-  alert('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+  // checks for the answer to answer One
+  if (answerOne === 'yes' || answerOne === 'y') {
+    //console.log('Sorry, I do not live in Seattle');
+    alert('Sorry, I do not live in Seattle');
+  } else if (answerOne === 'no' || answerOne === 'n') {
+    //console.log('Correct. I do not live in Seattle');
+    playerScore++;
+    alert(`Correct. I do not live in Seattle. Score: ${playerScore}`);
+  } else {
+    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    alert('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+  }
 }
+q1();
 
 // prompt for question 2 and store to variable converted to lower case
 let answerTwo = prompt('Do I live in the United States (Yes/No or Y/N)?').toLowerCase();
