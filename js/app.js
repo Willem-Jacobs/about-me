@@ -94,20 +94,23 @@ function q4(){
 q4();  
 
 // prompt for question 5 and store to variable converted to lower case
-let answerFive = prompt('Am I wanting to return to coding (Yes/No or Y/N)?').toLowerCase();
+function q5(){
+  let answerFive = prompt('Am I wanting to return to coding (Yes/No or Y/N)?').toLowerCase();
 
-// checks for the answer to answer One
-if (answerFive === 'yes' || answerFive === 'y') {
-  //console.log('You are correct, I enjoy coding so much that I want to return to doing it full-time');
-  playerScore++;
-  alert(`You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: ${playerScore}`);
-} else if (answerFive === 'no' || answerFive === 'n') {
-  //console.log('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
-  alert('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
-} else {
-  //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
-  alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  // checks for the answer to answer One
+  if (answerFive === 'yes' || answerFive === 'y') {
+    //console.log('You are correct, I enjoy coding so much that I want to return to doing it full-time');
+    playerScore++;
+    alert(`You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: ${playerScore}`);
+  } else if (answerFive === 'no' || answerFive === 'n') {
+    //console.log('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
+    alert('You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion');
+  } else {
+    //console.log('Sorry, you did not answer with a yes/no or y/n. Next question now!');
+    alert('Sorry, you did not answer with a Yes/No or Y/N. Next question now!');
+  }
 }
+q5();  
 
 alert('Thanks for taking my quiz. Hope you learned a little about me ' + userName);
 
