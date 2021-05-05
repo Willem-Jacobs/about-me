@@ -111,7 +111,7 @@ if (playGame === 'yes' || playGame === 'y') {
   alert('Great lets Play my amazing number guesing game!!');
   for (let i = 1; i <= attempts; i++) {
     //console.log(`attempts: ${i}`);
-    playerGuess = prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
+    playerGuess = +prompt(`Attempt #:${i} out of ${attempts}. Guess a number between 1 - 10`);
     //console.log(`Number guessed by player: ${playerGuess}`);
     if (playerGuess < myNumber) {
       alert('Your guess is too low');
