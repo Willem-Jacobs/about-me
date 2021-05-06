@@ -3,7 +3,7 @@
 //system variables needed
 let playerScore = 0;
 let playGame = '';
-const questions = ['Do I live in Seattle area (Yes/Y or No/N?', 'Do I live in the United States (Yes/No or Y/N', 'Do I enjoy coding with JavaScript (Yes/No or Y/N)?', 'Do I currently work for the Port Authority (Yes/No or Y/N)?', 'Am I wanting to return to coding (Yes/No or Y/N)?'];
+const questions = ['Do I live in Seattle area (Yes/Y or No/N)?', 'Do I live in the United States (Yes/No or Y/N)', 'Do I enjoy coding with JavaScript (Yes/No or Y/N)?', 'Do I currently work for the Port Authority (Yes/No or Y/N)?', 'Am I wanting to return to coding (Yes/No or Y/N)?'];
 const correctMessages = ['Correct. I do not live in the Seattle area. Score: ', 'You are correct. I live in the Cayman Islands. Score: ', 'You are correct, I do enjoy coding with JavaScript. I like coding with many different languages. Score: ', 'You are correct, I have been working with the Port Authority for 26 years. Score: ', 'You are correct, I enjoy coding so much that I want to return to doing it full-time. Score: '];
 const wrongMessages = ['Sorry, I do not live in the Seattle area. Score: ', 'You are NOT correct!, I live in the Cayman Islands. Score: ', 'You are incorrect. I enjoy coding in JavaScript and other languages as well! Score: ', 'You are incorrect. My entire career has been with the Port Authority for 26 years already. Score: ', 'You are incorrect. My mid-life crises is hitting and want to change to go back to coding which is my passion. Score: '];
 const correctAnswers = ['no', 'no', 'yes', 'yes', 'yes'];
