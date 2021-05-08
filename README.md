@@ -17,11 +17,36 @@
 - User Story 4 - Added the score option to all questions and displays the score on most alerts as the game goes on.
 - Adjusted the CSS change colors, fixe footer to fixed position, centered boxes.
 
+### New Feauters added for lab 4
+
+- Pair programming with Heather Bisgaard (Driver). I was navigator.
+  - For driver to get the code, the are provided the link.
+  - Driver goes to that Repo and forks it to their GitHub.
+  - Driver copies the clone link.
+  - Driver goes to the folder in terminal where the local git will be made.
+  - Driver does a clone of the PR from GitHun to their git.
+  - Driver changes to directory and can edit the code as needed.
+  - Driver to ACP as required. Once last one is done then:
+- To send code back to the Navigator from the Driver and udpate the Navigator Repo.
+  - Driver creates a Pull Request from the Repo.
+  - Navigator will go the the Repo and confirm/merge the code.
+  - Navigator to update git on local machine will go to terminal and directory to do a git pull origin branch (git pull origin main).
+- Converted the questions to funcitons.
+
+## Stretch Goals for lab 4
+
+- Stretch 1 completed.
+- Stretch 2 completed. Used a switch statement for this example that worked cleaner and better than a series of IF statements doing various checks.
+
+### New Featuers added for lab 5b
+
+- Stretch goal #2 completed. (cf.wjedev.ky) will take you to the AWS S3 for the page.
+
 ### Author: Willem Jacobs
 
 ### Collaborators
 
-- None - Work done on my own.
+- Heather Bisgaard - Driver for lab 4.
 
 ### Links and Resources
 
@@ -30,5 +55,5 @@
 
 ### Reflections and Comments
 
-- Consider including the answers to your daily journal and submission questions here
-- This is also a good place to reflect on the tools and resources used and learned
+- Lab 4 stretch goal #2 was a nice challange to make the code compact and simple to read.
+- Lab 5b. Setup my own domain (wjedev.ky) to use for different projects. Linked it to the AWS S3.
